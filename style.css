@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --clr--green-400: hsl(172, 67%, 45%);
+    --clr--green-900: hsl(183, 100%, 15%);
+    --clr--grey-500: hsl(186, 14%, 43%);
+    --clr--grey-400: hsl(184, 14%, 56%);
+    --clr--grey-200: hsl(185, 41%, 84%);
+    --clr--grey-50: hsl(189, 47%, 97%);
+    --clr--white: hsl(0, 100%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin-block-end: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: "Space Mono", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    background-color: var(--clr--grey-200);
+    color: var(--clr--green-900);
+    padding: 1.5rem;
+}
+
+h1, h2, h3, h4,
+button, input, label {
+    line-height: 1.1;
+}
+
+h1, h2,
+h3, h4 {
+    text-wrap: balance;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+img, video,
+picture, canvas, svg {
+    max-width: 100%;
+    display: block;
+}
+
+input, button,
+textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+:target {
+    scroll-margin-block: 5ex;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+h1 {
+    letter-spacing: 4px;
+}
+
+.tip-calculator {
+    max-width: 55rem;
+    background-color: var(--clr--white);
+    border-radius: 1rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: left;
+    gap: 1.5rem;
+}
+
+.data-entry {
+    width: 20rem;
+}
+
+button {
+    width: 9rem;
+    margin: 0.7rem 0.3rem;
+    padding: 0.8rem;
+    border-radius: 0.2rem;
+    background-color: var(--clr--green-900);
+    color: var(--clr--white);
+    font-weight: 600;
+
+    &:focus {
+        background-color: var(--clr--green-400);
+        color: var(--clr--green-900);   
+    }
+}
+
+#custom {
+    width: 9rem;
+    margin: 0.7rem 0.3rem;
+    padding: 0.8rem;
+    border-radius: 0.2rem;
+
+    &::placeholder {
+        font-weight: 800;
+        text-align: center;
+    }
+}
+
+.result {
+    width: 20rem;
+    background-color: var(--clr--green-900);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    color: var(--clr--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3.5rem;
+}
+
+input {
+    width: 100%;
+    background-color: var(--clr--grey-50);
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    text-align: right;
+    font-weight: 800;
+
+    &:focus {
+        outline: var(--clr--green-400) solid 2px;
+    }
+}
+
+#bill {
+    background-image: url(./images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: 1rem;
+    
+}
+
+#People {
+    background-image: url(./images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: 1rem;
+}
+
+.error {
+    float: right;
+    color: rgb(248, 59, 59);
+    visibility: hidden;
+}
+
+.levels {
+    margin: 1rem 0;
+}
+
+.answer {
+    display: flex;
+}
+
+.per {
+    font-size: 0.8rem;
+    color: var(--clr--grey-400);
+}
+
+.output {
+    margin-left: auto;
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--clr--green-400);
+}
+
+.reset:disabled {
+    opacity: 0.5;
+}
+
+.reset {
+    width: 100%;
+    margin: 0;
+    background-color: var(--clr--green-400);
+    color: var(--clr--green-900);
+    padding: 1rem;
+}
+
+
+@media (max-width: 375px) {
+    .tip-calculator {
+       max-width: 20rem;
+    }
+
+    button {
+        width: 7.5rem;
+    }
+
+    #custom {
+        width: 7.5rem;
+    }
+}
